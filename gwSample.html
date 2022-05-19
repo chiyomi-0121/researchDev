@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <!--link rel="stylesheet" href="css/style.css"-->
+    <title>GWサンプル画面</title>
+    <script type="text/javascript">
+        var timer_ID;
+        var time = 600;
+
+        function minusTime(){
+            time--;
+            dispTime();
+            if(time == 0){
+                clearInterval(timer_ID);
+                alert('10分経過しました。');
+            }
+        }
+
+        function dispTime(){
+            min = Math.floor(time/60);
+            sec = time % 60;
+            document.getElementById("min").innerHTML = min;
+            document.getElementById("sec").innerHTML = sec;
+        }
+
+        window.onload = function(){
+            dispTime();
+            timer_ID = setInterval("minusTime()", 1000);
+        }
+    </script>
+</head>
+<body style="margin: 0 15%;background-color: azure;">
+    <div id="wrap">
+        <div id="header" style=" text-align: center; background-color: cornflowerblue;">
+            <h2 class="timer">残り時間 <span id="min"></span>分<span id="sec"></span>秒</h2>
+        </div>
+        <div id="main">
+            <div id="wordArea" style="height: 200px;"></div>
+            <div id="inputArea" style="margin-bottom: 40px; padding: 50px 100px; background-color: cornflowerblue;">
+                <input type="text" name="content" id="content" style="width: 80%; height: 55px; font-size: 18px;">
+                <button type="submit" style="width: 15%;height: 55px; margin: 0 0 0 15px; font-size: 13px;">確定</button>
+            </div>
+            <div id="timeLine" style="width: 60%;">
+                <h3>タイムライン</h3>
+                <ul style="list-style-type: circle;">
+                    <li style="border-bottom: 1px solid darkgray;font-size: 20px;">○○さんが「～～～～～～～」を思いつきました。</li>
+                    <li style="border-bottom: 1px solid darkgray;font-size: 20px;">○○さんが「～～～～～～～」を思いつきました。</li>
+                    <li style="border-bottom: 1px solid darkgray;font-size: 20px;">○○さんが「～～～～～～～」を思いつきました。</li>
+                    <li style="border-bottom: 1px solid darkgray;font-size: 20px;">○○さんが「～～～～～～～」を思いつきました。</li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer" style="border-top: 1px solid black; padding-top: 20px; font-size: 20px;">
+            (/・ω・)/がお～
+        </div>
+    </div>
+</body>
+</html>
