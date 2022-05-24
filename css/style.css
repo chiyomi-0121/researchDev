@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+body {
+    margin: 0 15%;
+    padding-top: 0;
+    background-color: azure;
+}
+
+#header {
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    display: table;
+    background-color: cornflowerblue;
+}
+
+.timer {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#main {
+    overflow: auto;
+}
+
+#wordArea {
+    padding: 30px 60px;
+    text-align: center;
+}
+
+.word {
+    width: 80px;
+    font-size: 40px;
+}
+
+#symbol {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 35px;
+}
+
+#inputArea {
+    margin: 25px 0;
+    padding: 50px 100px;
+    background-color: cornflowerblue;
+}
+
+#content {
+    width: 80%;
+    height: 55px;
+    font-size: 18px;
+}
+
+button {
+    width: 15%;
+    height: 55px;
+    margin: 0 0 0 15px;
+    font-size: 13px;
+}
+
+#timeLine {
+    width: 60%;
+    margin-right: 30px;
+    float: left;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+li {
+    border-bottom: 1px solid darkgray;
+    font-size: 20px;
+}
+
+#myIdea {
+    width: 35%;
+    height: 200px;
+    background-color: aqua;
+    margin-top: 30px;
+    float: left;
+}
+
+#footer {
+    border-top: 1px solid black;
+    padding: 20px 0;
+    font-size: 20px;
+    clear: both;
+}
