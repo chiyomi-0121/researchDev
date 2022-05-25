@@ -2,11 +2,13 @@
     'https://github.com/chiyomi-0121/researchDev.git'
 
 # フォルダの構成
-    'gwSample.php'...GWサンプル画面
+    'gwSample.html'...GWサンプル画面(htmlのみ)
+    'gwSample.php'...GWサンプル画面(php,Ajax適用)
     'ajax_test.php'...Ajaxテスト用コード
     'js/script.js'...JavaScript記述用
     'css/style.css'...スタイルシート
     'private/database.php'...DB接続用
+    'private/dbsample.php'...DB接続サンプル用
     'index.php'...トップ画面
     'next.php'...画面遷移確認画面
     'startGW.php'...GW開始画面
