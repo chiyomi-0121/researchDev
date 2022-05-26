@@ -13,9 +13,10 @@
         <div id="main">
             <div id="wordArea">
                 <div>
-                    <span class="word">あああ</span>
-                    <span id="symbol">X</span>
-                    <span class="word">AAA</span>
+                    <span class="word" id="w1">あああ</span>
+                    <span id="symbol">&times;</span>
+                    <span class="word" id="w2">AAA</span>
+                    <button id="update" onclick="updateWords()">更新</button>
                 </div>    
             </div>
             <div id="inputArea">
@@ -25,10 +26,10 @@
             <div id="timeLine">
                 <h3>タイムライン</h3>
                 <ul>
-                    <li>○○さんが「～～～～～～～」を思いつきました。</li>
-                    <li>○○さんが「～～～～～～～」を思いつきました。</li>
-                    <li>○○さんが「～～～～～～～」を思いつきました。</li>
-                    <li>○○さんが「～～～～～～～」を思いつきました。</li>
+                    <li>○○さんが「～～～～」を思いつきました。</li>
+                    <li>○○さんが「～～～～」を思いつきました。</li>
+                    <li>○○さんが「～～～～」を思いつきました。</li>
+                    <li>○○さんが「～～～～」を思いつきました。</li>
                 </ul>
             </div>
             <div id="myIdea">

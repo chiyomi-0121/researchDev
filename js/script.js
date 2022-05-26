@@ -35,6 +35,7 @@ $(function () {
             .done(function (data) {
                 $("#result").text(data);
                 document.getElementById("content").value = '';
+                updateWords();
             })
             // Ajaxリクエストが失敗した場合
             .fail(function (XMLHttpRequest, textStatus, errorThrown) {
