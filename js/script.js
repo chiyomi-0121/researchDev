@@ -42,3 +42,17 @@ $(function () {
             });
     });
 });
+
+function updateWords(){
+    var words1 = new Array("あああ", "いいい", "ううう", "えええ", "おおお");
+    var words2 = new Array("AAA", "BBB", "CCC", "DDD", "EEE");
+
+    var w1n = Math.floor( Math.random() * 5 );
+    var w2n = Math.floor( Math.random() * 5 );
+
+    //console.log(words1[w1n]);
+    //console.log(words2[w2n]);
+
+    document.getElementById("w1").innerHTML = words1[w1n];
+    document.getElementById("w2").innerHTML = words2[w2n];
+}
