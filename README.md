@@ -18,17 +18,19 @@
     'endGW.php'...GW終了画面
     'result.php'...結果画面
 
-# DBの構成   
-    WORDLIST
+# DBの構成
+    DB名：rdevsample(サンプル用)
+
+    wordlist
         id...言葉ID primary INT AUTO_INCREMENT
         content...内容 VARCHAR(64)
         createUID...作成ユーザID INT
 
-    IDEAS
+    ideas
         ideaID...アイデア番号 primary INT AUTO_INCREMENT
         ideaDetail...アイデア詳細 VARCHAR(255)
-        creatUID...作成ユーザID INT
+        creatUID...作成ユーザID INT (※サンプル用では10で固定)
 
-    USERDATA
+    userdata
         uid...ユーザID primary INT AUTO_INCREMENT
         name...ユーザ名 VARCHAR(32)
