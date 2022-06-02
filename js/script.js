@@ -1,6 +1,8 @@
 var timer_ID;
 var time = 600;
 
+var connect_ID;
+
 function minusTime() {
     time--;
     dispTime();
@@ -17,9 +19,29 @@ function dispTime() {
     document.getElementById("sec").innerHTML = sec;
 }
 
+function updateTimeLine(){
+    if(time == 0){
+        clearInterval(connect_ID);
+    }else{ 
+        $.ajax({
+            type: "POST",
+            url: "update.php"
+        })
+            .done(function(data){
+                console.log("通信");
+                result = JSON.parse(data);
+                console.log(result);
+            })
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            })
+    }
+}
+
 window.onload = function () {
     dispTime();
     timer_ID = setInterval("minusTime()", 1000);
+    setInterval("updateTimeLine()",10000);
 }
 
 $(function () {
