@@ -10,14 +10,22 @@
     $statement->execute();
     $ideaDatas = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    while($row = $ideaDatas){
-        $ideaData[] = array(
-            'createUID'=>$row['createUID'],
-            'name'=>$row['name'],
-            'content'=>$row['ideaDetail']
+    foreach($ideaDatas as $ideaData){
+        //var_dump($ideaData);
+
+        $ideaList[]=array(
+            'uid'=>$ideaData['uid'],
+            'name'=>$ideaData['name'],
+            'content'=>$ideaData['ideaDetail']
         );
     }
 
-    $data = json_encode($ideaData);
+    //var_dump($ideaList);
+    //echo count($ideaList);
+
+    $data = json_encode($ideaList); //json形式にエンコード
+
+    //var_dump($data);
+    echo $data; //script.jsにデータを渡す
 
 ?>

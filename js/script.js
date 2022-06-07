@@ -24,13 +24,12 @@ function updateTimeLine(){
         clearInterval(connect_ID);
     }else{ 
         $.ajax({
-            type: "POST",
-            url: "update.php"
+            type: "GET",
+            url: "../researchDev/update.php"
         })
-            .done(function(data){
+            .done(function(res){
                 console.log("通信");
-                result = JSON.parse(data);
-                console.log(result);
+                console.log(JSON.parse(res));
             })
             .fail(function (XMLHttpRequest, textStatus, errorThrown) {
                 alert(errorThrown);
