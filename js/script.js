@@ -27,9 +27,15 @@ function updateTimeLine(){
             type: "GET",
             url: "../researchDev/update.php"
         })
-            .done(function(res){
+            .done(function(datas){
                 console.log("通信");
-                console.log(JSON.parse(res));
+                console.log(JSON.parse(datas));
+                datas.forEach((data, index) => {
+                    idx = 'L' + index;
+                    str = data['name'] + 'さんが「' + data['content'] + '」を思いつきました。';
+
+                    document.getElementById(idx).innerHTML = str;
+                });
             })
             .fail(function (XMLHttpRequest, textStatus, errorThrown) {
                 alert(errorThrown);
