@@ -17,6 +17,8 @@
     'execGW.php'...GW画面
     'endGW.php'...GW終了画面
     'result.php'...結果画面
+    'update.php'...タイムライン更新用コード
+    'ideaRegister.php'...アイデア登録用コード
 
 # DBの構成
     DB名：rdevsample(サンプル用)
