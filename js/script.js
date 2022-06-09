@@ -40,13 +40,31 @@ function updateTimeLine(){
                 //console.log(list);
                 if(list === null){
                     //listがnullの時の処理
-                    //「アイデアが登録されていません」と表示
-                }else{
-                    list.forEach(function(data, index){
-                        idx = 'L' + index;
-                        str = data['name'] + 'さんが「' + data['content'] + '」を思いつきました。';
+                    var parent_div = document.getElementById("output");
+                    var child_p = document.createElement("p");
 
-                        document.getElementById(idx).innerHTML = str;
+                    child_p.innerHTML = "アイデアが登録されていません"
+                    parent_div.appendChild(child_p);
+                }else{
+                    var parent_div = document.getElementById("output");
+                    if(document.getElementById("list")){
+                        var child_ul = document.createElement("ul");
+                        child_ul.id = 'list';
+                        parent_div.appendChild(child_ul);
+                    }else{
+
+                    }
+                    var child_ul = document.createElement("ul");
+                    child_ul.id = 'list';
+                    parent_div.appendChild(child_ul);
+
+                    var parent_ul = document.getElementById("list");
+                    list.forEach(function(data, index){
+                        var child_li = document.createElement("li");
+                        var str = data['name'] + 'さんが「' + data['content'] + '」を思いつきました。';
+
+                        child_li.innerHTML = str;
+                        parent_ul.appendChild(child_li);
                     });
                 }
             })
