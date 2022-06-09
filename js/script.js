@@ -3,6 +3,13 @@ var time = 600;
 
 var connect_ID;
 
+window.onload = function () {
+    dispTime();
+    updateTimeLine();
+    timer_ID = setInterval("minusTime()", 1000);
+    setInterval("updateTimeLine()",10000);
+}
+
 function minusTime() {
     time--;
     dispTime();
@@ -31,23 +38,22 @@ function updateTimeLine(){
                 //console.log("通信");
                 var list = JSON.parse(datas);
                 //console.log(list);
-                list.forEach(function(data, index){
-                    idx = 'L' + index;
-                    str = data['name'] + 'さんが「' + data['content'] + '」を思いつきました。';
+                if(list === null){
+                    //listがnullの時の処理
+                    //「アイデアが登録されていません」と表示
+                }else{
+                    list.forEach(function(data, index){
+                        idx = 'L' + index;
+                        str = data['name'] + 'さんが「' + data['content'] + '」を思いつきました。';
 
-                    document.getElementById(idx).innerHTML = str;
-                });
+                        document.getElementById(idx).innerHTML = str;
+                    });
+                }
             })
             .fail(function (XMLHttpRequest, textStatus, errorThrown) {
                 alert(errorThrown);
             })
     }
-}
-
-window.onload = function () {
-    dispTime();
-    timer_ID = setInterval("minusTime()", 1000);
-    setInterval("updateTimeLine()",10000);
 }
 
 $(function () {
