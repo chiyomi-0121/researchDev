@@ -38,7 +38,7 @@
             </div>
         </div>
         <div id="footer">
-             ^^) _旦~~
+            (;´･ω･)
         </div>
     </div>
     <!--jQuery読み込み(公開するときにminifiedのsrcに書き換える)-->

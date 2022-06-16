@@ -7,7 +7,7 @@ window.onload = function () {
     dispTime();
     updateTimeLine();
     timer_ID = setInterval("minusTime()", 1000);
-    setInterval("updateTimeLine()",10000);
+    setInterval("updateTimeLine()",5000);
 }
 
 function minusTime() {
