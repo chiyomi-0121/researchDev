@@ -1,9 +1,19 @@
 var timer_ID;
 var time = 600;
 
+
+var timeStr = "2022/6/20 14:57:00"
+var startTime = new Date(timeStr);
+var now = 0;
+var m = 0;
+var s = 0;
+var prgTime = 0;
+
 var connect_ID;
 
 window.onload = function () {
+    calcProgress();
+    setInterval("calcProgress()", 1000);
     dispTime();
     updateTimeLine();
     timer_ID = setInterval("minusTime()", 1000);
@@ -17,6 +27,30 @@ function minusTime() {
         clearInterval(timer_ID);
         alert('10分経過しました。');
     }
+}
+
+function calcProgress() {
+    now = new Date();
+
+    prgTime = parseInt((now.getTime()- startTime.getTime()) / 1000);
+    console.log(prgTime);
+
+    m = parseInt((prgTime / 60) % 60);
+    console.log(9-m);
+    s = parseInt(prgTime % 60);
+    if((60-s) == 60){
+        console.log(0);
+    }else{
+        console.log(60-s);
+    }
+
+    var printTime = m + '分' + s + '秒';
+
+    console.log(printTime);
+    /*var start = new Date(startTime);
+    var now = new Date();
+    
+    console.log(prgTime.toString());*/
 }
 
 function dispTime() {
