@@ -5,9 +5,9 @@ var connect_ID;
 
 window.onload = function () {
     dispTime();
-    updateTimeLine();
+    //updateTimeLine();
     timer_ID = setInterval("minusTime()", 1000);
-    setInterval("updateTimeLine()",5000);
+    //setInterval("updateTimeLine()",5000);
 }
 
 function minusTime() {
@@ -26,6 +26,29 @@ function dispTime() {
     document.getElementById("sec").innerHTML = sec;
 }
 
+$(function () {
+    $("#submit").click(function (event) {
+        let content = $("#content").val();
+        $.ajax({
+            type: "POST",
+            url: "ajax_test.php",
+            data: { "content" : content},
+            dataType: "text"
+        })
+            // Ajaxリクエストが成功した場合
+            .done(function (data) {
+                $("#result").text(data);
+                document.getElementById("content").value = '';
+                updateWords();
+                updateTimeLine();
+            })
+            // Ajaxリクエストが失敗した場合
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            });
+    });
+});
+
 function updateTimeLine(){
     if(time == 0){
         clearInterval(connect_ID);
@@ -37,7 +60,15 @@ function updateTimeLine(){
             .done(function(datas){
                 //console.log("通信");
                 var list = JSON.parse(datas);
-                //console.log(list);
+                console.log(list);
+
+                var elem = document.getElementById("ListArea");
+                console.log(elem);
+                var text = '<li class="ListContent">' + list['name'] + 'さんが「' + list['ideaDetail'] + '」を思いつきました。';
+
+                elem.insertAdjacentHTML('afterbegin', text);
+                
+                /*
                 if(list === null){
                     //listがnullの時の処理
                     var parent_div = document.getElementById("output");
@@ -67,34 +98,13 @@ function updateTimeLine(){
                         parent_ul.appendChild(child_li);
                     });
                 }
+                */
             })
             .fail(function (XMLHttpRequest, textStatus, errorThrown) {
                 alert(errorThrown);
             })
     }
 }
-
-$(function () {
-    $("#submit").click(function (event) {
-        let content = $("#content").val();
-        $.ajax({
-            type: "POST",
-            url: "ajax_test.php",
-            data: { "content" : content},
-            dataType: "text"
-        })
-            // Ajaxリクエストが成功した場合
-            .done(function (data) {
-                $("#result").text(data);
-                document.getElementById("content").value = '';
-                updateWords();
-            })
-            // Ajaxリクエストが失敗した場合
-            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
-                alert(errorThrown);
-            });
-    });
-});
 
 function updateWords(){
     var words1 = new Array("あああ", "いいい", "ううう", "えええ", "おおお");
