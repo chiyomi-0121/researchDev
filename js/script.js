@@ -5,9 +5,7 @@ var connect_ID;
 
 window.onload = function () {
     dispTime();
-    //updateTimeLine();
     timer_ID = setInterval("minusTime()", 1000);
-    //setInterval("updateTimeLine()",5000);
 }
 
 function minusTime() {
@@ -60,10 +58,8 @@ function updateTimeLine(){
             .done(function(datas){
                 //console.log("通信");
                 var list = JSON.parse(datas);
-                console.log(list);
 
                 var elem = document.getElementById("ListArea");
-                console.log(elem);
                 var text = '<li class="ListContent">' + list['name'] + 'さんが「' + list['ideaDetail'] + '」を思いつきました。';
 
                 elem.insertAdjacentHTML('afterbegin', text);
