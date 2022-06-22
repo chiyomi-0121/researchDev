@@ -6,6 +6,7 @@ var connect_ID;
 window.onload = function () {
     dispTime();
     timer_ID = setInterval("minusTime()", 1000);
+    //setInterval("updateTimeLine()", 1000);
 }
 
 function minusTime() {
