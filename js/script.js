@@ -64,38 +64,6 @@ function updateTimeLine(){
                 var text = '<li class="ListContent">' + list['name'] + 'さんが「' + list['ideaDetail'] + '」を思いつきました。';
 
                 elem.insertAdjacentHTML('afterbegin', text);
-                
-                /*
-                if(list === null){
-                    //listがnullの時の処理
-                    var parent_div = document.getElementById("output");
-                    var child_p = document.createElement("p");
-
-                    child_p.innerHTML = "アイデアが登録されていません"
-                    parent_div.appendChild(child_p);
-                }else{
-                    var parent_div = document.getElementById("output");
-                    if(document.getElementById("list")){
-                        var child_ul = document.createElement("ul");
-                        child_ul.id = 'list';
-                        parent_div.appendChild(child_ul);
-                    }else{
-
-                    }
-                    var child_ul = document.createElement("ul");
-                    child_ul.id = 'list';
-                    parent_div.appendChild(child_ul);
-
-                    var parent_ul = document.getElementById("list");
-                    list.forEach(function(data, index){
-                        var child_li = document.createElement("li");
-                        var str = data['name'] + 'さんが「' + data['content'] + '」を思いつきました。';
-
-                        child_li.innerHTML = str;
-                        parent_ul.appendChild(child_li);
-                    });
-                }
-                */
             })
             .fail(function (XMLHttpRequest, textStatus, errorThrown) {
                 alert(errorThrown);
