@@ -6,7 +6,6 @@ var connect_ID;
 window.onload = function () {
     dispTime();
     timer_ID = setInterval("minusTime()", 1000);
-    //setInterval("updateTimeLine()", 1000);
 }
 
 function minusTime() {
@@ -36,7 +35,8 @@ $(function () {
         })
             // Ajaxリクエストが成功した場合
             .done(function (data) {
-                $("#result").text(data);
+                console.log(data);
+                //$("#result").text(data);
                 document.getElementById("content").value = '';
                 updateWords();
                 updateTimeLine();

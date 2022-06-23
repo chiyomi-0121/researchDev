@@ -24,21 +24,9 @@
                 <button id="submit">確定</button>
             </div>
             <div id="timeLine">
-                <h3>タイムライン</h3>
-                <div id="output">
-                    <ul id="ListArea">
-                        <!--
-                            <li id="L0">○○さんが「～～～～」を思いつきました。</li>
-                            <li id="L1">○○さんが「～～～～」を思いつきました。</li>
-                            <li id="L2">○○さんが「～～～～」を思いつきました。</li>
-                            <li id="L3">○○さんが「～～～～」を思いつきました。</li>
-                            <li id="L4">○○さんが「～～～～」を思いつきました。</li>
-                        -->
-                    </ul>
-                </div>
-            </div>
-            <div id="myIdea">
-                <p id="result"></p>
+                <h3 id="TLtitle">タイムライン</h3>
+                <ul id="ListArea">
+                </ul>
             </div>
         </div>
         <div id="footer">
