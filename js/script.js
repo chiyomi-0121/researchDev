@@ -1,28 +1,55 @@
 var timer_ID;
 var time = 600;
 
+var startStr = "2022/6/23 23:40:00"; //開始時間の設定
+var startTime = new Date(startStr); //開始時間をもとに、Dateオブジェクトを作成
+var now = 0;
+var m = 0;
+var s = 0;
+var prgTime = 0;
+
 var connect_ID;
 
 window.onload = function () {
-    dispTime();
+    //dispTime();
+    calcProgress();
+    //setInterval("calcProgress()", 1000);
     timer_ID = setInterval("minusTime()", 1000);
 }
 
 function minusTime() {
     time--;
-    dispTime();
+    calcProgress();
     if (time == 0) {
         clearInterval(timer_ID);
         alert('10分経過しました。');
     }
 }
 
-function dispTime() {
+function calcProgress() {
+    now = new Date();
+
+    prgTime = parseInt((now.getTime() - startTime.getTime()) / 1000);
+    m = 9 - parseInt((prgTime / 60) % 60);
+    s = 60 - parseInt((prgTime % 60));
+
+    var printTime = m + '分' + s + '秒';
+
+    console.log(printTime);
+
+    document.getElementById("min").innerHTML = m;
+    document.getElementById("sec").innerHTML = s;
+
+    /*問題点*/
+    //〇分00秒の際に、00秒ではなく60秒と表示される
+}
+
+/*function dispTime() {
     min = Math.floor(time / 60);
     sec = time % 60;
     document.getElementById("min").innerHTML = min;
     document.getElementById("sec").innerHTML = sec;
-}
+}*/
 
 $(function () {
     $("#submit").click(function (event) {
