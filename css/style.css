@@ -1,10 +1,13 @@
 @charset "UTF-8";
 
 body {
-    height: 650px;
+    height: 100%;
     margin: 0 15%;
-    padding-top: 0;
     background-color: azure;
+}
+
+#wrap {
+    height: 100%;
 }
 
 #header {
@@ -15,13 +18,18 @@ body {
     background-color: cornflowerblue;
 }
 
+#main {
+    height: 500px;
+    padding-top: 25px;
+}
+
 .timer {
     display: table-cell;
     vertical-align: middle;
 }
 
 #wordArea {
-    margin-top: 25px;
+    height: 59px;
     padding: 20px 60px;
     text-align: center;
 }
@@ -82,9 +90,9 @@ body {
 }
 
 #footer {
-    margin-top: 28px;
+    margin-top: 0px;
     border-top: 1px solid black;
-    padding: 20px 0;
+    padding: 10px 0;
     font-size: 20px;
     clear: both;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
-    <title>GWサンプル画面</title>
+    <title>グループワーク</title>
 </head>
 <body>
     <div id="wrap">

@@ -11,6 +11,7 @@
     'private/database.php'...DB接続用
     'private/dbsample.php'...DB接続サンプル用
     'private/exception_handler.php'...例外処理用
+    'super/timeSet.php'...開始時間設定画面(管理者用)
     'index.php'...トップ画面
     'next.php'...画面遷移確認画面
     'startGW.php'...GW開始画面
