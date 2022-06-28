@@ -13,32 +13,18 @@ var prgTime = 0;
 var connect_ID;
 
 window.onload = function () {
-    //dispTime();
     //console.log(startTime);
     //console.log(endTime);
     calcProgress();
     setInterval("calcProgress()", 1000);
-    //timer_ID = setInterval("minusTime()", 1000);
 }
-
-
-/*function minusTime() {
-    time--;
-    calcProgress();
-    if (time == 0) {
-        clearInterval(timer_ID);
-        if (!alert('終了です。')) {
-            window.location.href = "./result.php";
-        }
-    }
-}*/
 
 function calcProgress() {
     now = new Date();
 
     //console.log(now.getTime());
     //console.log(endTime.getTime());
-    if (parseInt(now.getTime()/1000) === parseInt(endTime.getTime()/1000)) {
+    if (parseInt(now.getTime() / 1000) === parseInt(endTime.getTime() / 1000)) {
         if (!alert('終了です。')) {
             window.location.href = "./result.php";
         }
@@ -52,9 +38,9 @@ function calcProgress() {
 
         var printTime = min + '分' + sec + '秒';
         //console.log(printTime);
-        
-        document.getElementById("min").innerHTML = m;
-        document.getElementById("sec").innerHTML = s;
+
+        document.getElementById("min").innerHTML = min;
+        document.getElementById("sec").innerHTML = sec;
     }
 }
 
@@ -82,25 +68,21 @@ $(function () {
 });
 
 function updateTimeLine() {
-    if (time == 0) {
-        clearInterval(connect_ID);
-    } else {
-        $.ajax({
-            type: "GET",
-            url: "../researchDev/update.php"
-        })
-            .done(function (datas) {
-                //console.log("通信");
-                var list = JSON.parse(datas);
+    $.ajax({
+        type: "GET",
+        url: "../researchDev/update.php"
+    })
+        .done(function (datas) {
+            //console.log("通信");
+            var list = JSON.parse(datas);
 
-                var elem = document.getElementById("ListArea");
-                var text = '<li class="ListContent">' + list['name'] + 'さんが「' + list['ideaDetail'] + '」を思いつきました。';
-                elem.insertAdjacentHTML('afterbegin', text);
-            })
-            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
-                alert(errorThrown);
-            })
-    }
+            var elem = document.getElementById("ListArea");
+            var text = '<li class="ListContent">' + list['name'] + 'さんが「' + list['ideaDetail'] + '」を思いつきました。';
+            elem.insertAdjacentHTML('afterbegin', text);
+        })
+        .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+            alert(errorThrown);
+        })
 }
 
 function updateWords() {

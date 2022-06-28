@@ -81,12 +81,39 @@ body {
     margin: 0;
     padding: 0;
     list-style-type: circle;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .ListContent {
     border-bottom: 1px solid darkgray;
     font-size: 20px;
+}
+
+#tableArea {
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+}
+/*table {
+    margin-right: 0;
+    overflow-y: scroll;
+}*/
+
+#resultData {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, tr, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background-color: cornflowerblue;
 }
 
 #footer {
