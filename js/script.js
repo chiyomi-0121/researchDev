@@ -1,28 +1,28 @@
-var timer_ID;
-var time = 600;
+//var timer_ID;
+//var time = 600;
 
-var startStr = "2022/6/24 15:43:00"; //開始時間の設定
+var startStr = "2022/6/28 11:41:00"; //開始時間の設定
 var startTime = new Date(startStr); //開始時間をもとに、Dateオブジェクトを作成
 var endTime = new Date(startTime.getTime());
 endTime.setMinutes(endTime.getMinutes() + 10);
 var now = 0;
-var m = 0;
-var s = 0;
+var min = 0;
+var sec = 0;
 var prgTime = 0;
 
 var connect_ID;
 
 window.onload = function () {
     //dispTime();
-    console.log(startTime);
-    console.log(endTime);
+    //console.log(startTime);
+    //console.log(endTime);
     calcProgress();
     setInterval("calcProgress()", 1000);
     //timer_ID = setInterval("minusTime()", 1000);
 }
 
 
-function minusTime() {
+/*function minusTime() {
     time--;
     calcProgress();
     if (time == 0) {
@@ -31,30 +31,28 @@ function minusTime() {
             window.location.href = "./result.php";
         }
     }
-}
+}*/
 
 function calcProgress() {
-    now = Date.now();
+    now = new Date();
 
-    console.log(now.getTime());
-    console.log(endTime.getTime());
-    if (now.getTime() === endTime.getTime()) {
+    //console.log(now.getTime());
+    //console.log(endTime.getTime());
+    if (parseInt(now.getTime()/1000) === parseInt(endTime.getTime()/1000)) {
         if (!alert('終了です。')) {
             window.location.href = "./result.php";
         }
     } else {
         prgTime = parseInt((now.getTime() - startTime.getTime()) / 1000);
-        m = 9 - parseInt((prgTime / 60) % 60);
-        s = 60 - parseInt((prgTime % 60));
-
-        if (s === 60) {
-            s = 0;
+        min = 9 - parseInt((prgTime / 60) % 60);
+        sec = 60 - parseInt((prgTime % 60));
+        if (sec === 60) {
+            sec = 0;
         }
 
-        var printTime = m + '分' + s + '秒';
-
-        console.log(printTime);
-
+        var printTime = min + '分' + sec + '秒';
+        //console.log(printTime);
+        
         document.getElementById("min").innerHTML = m;
         document.getElementById("sec").innerHTML = s;
     }
@@ -71,8 +69,7 @@ $(function () {
         })
             // Ajaxリクエストが成功した場合
             .done(function (data) {
-                console.log(data);
-                //$("#result").text(data);
+                //console.log(data);
                 document.getElementById("content").value = '';
                 updateWords();
                 updateTimeLine();
@@ -98,7 +95,6 @@ function updateTimeLine() {
 
                 var elem = document.getElementById("ListArea");
                 var text = '<li class="ListContent">' + list['name'] + 'さんが「' + list['ideaDetail'] + '」を思いつきました。';
-
                 elem.insertAdjacentHTML('afterbegin', text);
             })
             .fail(function (XMLHttpRequest, textStatus, errorThrown) {
