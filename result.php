@@ -21,11 +21,11 @@
 <body>
     <div id="wrap">
         <div id="header">
-            <h1>結果一覧</h1>
+            <h1>結果</h1>
         </div>
         <div id="main">
             <div id="tableArea">
-                <table id="resultData">
+                <table class="resultData">
                     <thead>
                     <tr>
                         <th>作成者</th><th>内容</th>
