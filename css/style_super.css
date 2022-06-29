@@ -1,2 +1,66 @@
 @charset "UTF-8";
 
+body {
+    height: 100%;
+    margin: 0 15%;
+    background-color: azure;
+}
+
+#wrap {
+    height: 100%;
+}
+
+#header {
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    display: table;
+    background-color: cornflowerblue;
+}
+
+#main {
+    height: 425px;
+    padding-top: 100px;
+}
+
+#footer {
+    margin-top: 0px;
+    border-top: 1px solid black;
+    padding: 10px 0;
+    font-size: 20px;
+    clear: both;
+}
+
+#main h3 {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#main form {
+    height: 200px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#timeset {
+    width: 40%;
+    padding: 5px;
+    font-size: 20px;
+}
+
+#button {
+    margin-top: 30px;
+}
+
+#button input {
+    width: 70px;
+    height: 40px;
+    font-size: 20px;
+}
+
+#printTime {
+    height: 60px;
+    padding-top: 15px;
+    font-size: 30px;
+}
