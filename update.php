@@ -10,21 +10,6 @@
     $statement->execute();
     $ideaDatas = $statement->fetch(PDO::FETCH_ASSOC);
 
-    /*
-    foreach($ideaDatas as $ideaData){
-        //var_dump($ideaData);
-
-        $ideaList[]=array(
-            'uid'=>$ideaData['uid'],
-            'name'=>$ideaData['name'],
-            'content'=>$ideaData['ideaDetail']
-        );
-    }
-    */
-
-    //var_dump($ideaList);
-    //echo count($ideaList);
-
     $data = json_encode($ideaDatas); //json形式にエンコード
 
     //var_dump($data);
