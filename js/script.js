@@ -1,20 +1,18 @@
-//var timer_ID;
-//var time = 600;
-
-var startStr = "2022/6/28 11:41:00"; //開始時間の設定
-var startTime = new Date(startStr); //開始時間をもとに、Dateオブジェクトを作成
-var endTime = new Date(startTime.getTime());
-endTime.setMinutes(endTime.getMinutes() + 10);
+var startStr;
+var startTime;
+var endTime;
 var now = 0;
 var min = 0;
 var sec = 0;
 var prgTime = 0;
 
-var connect_ID;
-
 window.onload = function () {
     //console.log(startTime);
     //console.log(endTime);
+    startTime = new Date(); //開始時間のDateオブジェクトを作成
+    endTime = new Date(startTime.getTime()); //startTimeのコピー作成
+    endTime.setMinutes(endTime.getMinutes() + 10); //終了時間の決定
+
     calcProgress();
     setInterval("calcProgress()", 1000);
 }
@@ -49,7 +47,7 @@ $(function () {
         let content = $("#content").val();
         $.ajax({
             type: "POST",
-            url: "ajax_test.php",
+            url: "ideaRegister.php",
             data: { "content": content },
             dataType: "text"
         })
@@ -87,7 +85,7 @@ function updateTimeLine() {
 
 function updateWords() {
     var words1 = new Array("あああ", "いいい", "ううう", "えええ", "おおお");
-    var words2 = new Array("AAA", "BBB", "CCC", "DDD", "EEE");
+    var words2 = new Array("パソコン", "便利", "重い", "本", "箱");
 
     var w1n = Math.floor(Math.random() * 5);
     var w2n = Math.floor(Math.random() * 5);
