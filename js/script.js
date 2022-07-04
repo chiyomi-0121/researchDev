@@ -7,13 +7,9 @@ var sec = 0;
 var prgTime = 0;
 
 window.onload = function () {
-    //console.log(startTime);
-    //console.log(endTime);
-    const url = new URL(window.location.href);
-    const params = url.searchParams;
-    var param = params.get('stTimeParam'); 
-    startTime = new Date(param); //開始時間のDateオブジェクトを作成
-    console.log(startTime);
+    const url = window.location.href;
+    const param = (url.split('?')[1]).split('=')[1]; //(パラメータ部を取得).stTimeParamの値を取得
+    startTime = new Date(parseInt(param)); //開始時間のDateオブジェクトを作成
     endTime = new Date(startTime.getTime()); //startTimeのコピー作成
     endTime.setMinutes(endTime.getMinutes() + 10); //終了時間の決定
 
