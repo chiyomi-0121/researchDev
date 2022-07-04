@@ -4,7 +4,7 @@
 
     $dateTime = $date . " " . $time;
 
-    file_put_contents("../text/start.txt", $dateTime, FILE_APPEND);
+    file_put_contents("../text/start.txt", $dateTime);
     //var_dump($dateTime);
 ?>
 

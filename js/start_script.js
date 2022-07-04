@@ -12,7 +12,7 @@ function readTime() {
         url: "../researchDev/readText.php"
     })
         .done(function (str) {
-            console.log(str);
+            //console.log(str);
             time = new Date(str);
         })
         .fail(function (XMLHttpRequest, textStatus, errorThrown) {
@@ -22,9 +22,11 @@ function readTime() {
 
 function timer() {
     var now = new Date();
-    console.log(time.getTime());
-    console.log(now.getTime());
+    //console.log(time.getTime());
+    //console.log(now.getTime());
     if (parseInt(now.getTime() / 1000) === parseInt(time.getTime() / 1000)) {
-        window.location.href = "../researchDev/execGW.php";
+        const url = "../researchDev/execGW.php";
+        var param = "?stTimeParam=" + time.getTime();
+        window.location.href = url + param;
     }
 }
