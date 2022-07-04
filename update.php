@@ -4,7 +4,7 @@
   
     /** @var PDO $dbh データベースハンドラ */
 
-    $statement = $dbh->prepare('SELECT ideaDetail, name FROM ideas 
+    $statement = $dbh->prepare('SELECT ideaID, ideaDetail, name FROM ideas 
                                 INNER JOIN userdata ON createUID = userdata.uid
                                 ORDER BY ideaID DESC LIMIT 1');
     $statement->execute();

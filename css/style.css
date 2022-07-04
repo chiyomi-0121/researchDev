@@ -33,6 +33,40 @@ body {
     clear: both;
 }
 
+/*index.html用*/
+
+#wrap .index {
+    height: 425px;
+    padding-top: 100px;
+}
+#main h3 {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#main form {
+    height: 200px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#main #username {
+    width: 40%;
+    padding: 5px;
+    font-size: 20px;
+}
+
+#button {
+    margin-top: 30px;
+}
+
+#button input {
+    width: 70px;
+    height: 40px;
+    font-size: 20px;
+}
+
 /*startGW用*/
 
 #waitText {
@@ -97,11 +131,14 @@ body {
     margin-bottom: 0;
 }
 
+ul {
+    list-style: circle;
+}
+
 #ListArea {
     height: 70%;
     margin: 0;
     padding: 0;
-    list-style-type: circle;
     overflow-y: auto;
 }
 

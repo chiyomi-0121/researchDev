@@ -75,7 +75,8 @@ function updateTimeLine() {
             var list = JSON.parse(datas);
 
             var elem = document.getElementById("ListArea");
-            var text = '<li class="ListContent">' + list['name'] + 'さんが「' + list['ideaDetail'] + '」を思いつきました。';
+            var text = '<li class="ListContent"><input type="hidden" value="' + list['ideaID'] + '">';
+            text += list['name'] + 'さんが「' + list['ideaDetail'] + '」を思いつきました。';
             elem.insertAdjacentHTML('afterbegin', text);
         })
         .fail(function (XMLHttpRequest, textStatus, errorThrown) {
