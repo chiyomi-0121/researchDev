@@ -15,6 +15,7 @@ window.onload = function () {
 
     calcProgress();
     setInterval("calcProgress()", 1000);
+    setInterval("updateTimeLine()", 5000);
 }
 
 function calcProgress() {
@@ -56,7 +57,7 @@ $(function () {
                 //console.log(data);
                 document.getElementById("content").value = '';
                 updateWords();
-                updateTimeLine();
+                //updateTimeLine();
             })
             // Ajaxリクエストが失敗した場合
             .fail(function (XMLHttpRequest, textStatus, errorThrown) {
@@ -65,7 +66,39 @@ $(function () {
     });
 });
 
-function updateTimeLine() {
+function updateTimeLine(){
+    var tlElement = document.getElementById("ListArea"); //<ul id="ListArea">...</ul>
+    var ulFirstChild = tlElement.firstElementChild; //<li class="ListContent"><input type="hidden">...</input>...</li>
+    var latestNum;
+    if(ulFirstChild == null){
+        latestNum = 0;
+    }else{
+        var liFirstChild = ulFirstChild.firstElementChild; //<input type="hidden" value='...'>...</input>
+        latestNum =  liFirstChild.getAttribute("value"); //valueの値
+    }
+    
+    $.ajax({
+        type: "GET",
+        url: "update.php",
+        data: { "latestNum": latestNum }
+    })
+        .done(function(datas) {
+            var contents = JSON.parse(datas);
+            var elem = document.getElementById("ListArea");
+
+            contents.forEach(function(content){
+                var text = '<li class="ListContent"><input type="hidden" value="' + content['ideaID'] + '">';
+                text += content['name'] + 'さんが「' + content['content'] + '」を思いつきました。';
+                elem.insertAdjacentHTML('afterbegin', text);
+            });
+        })
+        .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+            alert(errorThrown);
+        })
+}
+
+
+/*function updateTimeLine() {
     $.ajax({
         type: "GET",
         url: "../researchDev/update.php"
@@ -82,7 +115,7 @@ function updateTimeLine() {
         .fail(function (XMLHttpRequest, textStatus, errorThrown) {
             alert(errorThrown);
         })
-}
+}*/
 
 function updateWords() {
     var words1 = new Array("あああ", "いいい", "ううう", "えええ", "おおお");

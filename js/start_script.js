@@ -24,7 +24,7 @@ function timer() {
     var now = new Date();
     //console.log(time.getTime());
     //console.log(now.getTime());
-    if (parseInt(now.getTime() / 1000) === parseInt(time.getTime() / 1000)) {
+    if (parseInt(now.getTime() / 1000) >= parseInt(time.getTime() / 1000)) {
         const url = "../researchDev/execGW.php";
         var param = "?stTimeParam=" + time.getTime();
         window.location.href = url + param;
