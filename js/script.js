@@ -57,7 +57,6 @@ $(function () {
                 //console.log(data);
                 document.getElementById("content").value = '';
                 updateWords();
-                //updateTimeLine();
             })
             // Ajaxリクエストが失敗した場合
             .fail(function (XMLHttpRequest, textStatus, errorThrown) {
@@ -96,26 +95,6 @@ function updateTimeLine(){
             alert(errorThrown);
         })
 }
-
-
-/*function updateTimeLine() {
-    $.ajax({
-        type: "GET",
-        url: "../researchDev/update.php"
-    })
-        .done(function (datas) {
-            //console.log("通信");
-            var list = JSON.parse(datas);
-
-            var elem = document.getElementById("ListArea");
-            var text = '<li class="ListContent"><input type="hidden" value="' + list['ideaID'] + '">';
-            text += list['name'] + 'さんが「' + list['ideaDetail'] + '」を思いつきました。';
-            elem.insertAdjacentHTML('afterbegin', text);
-        })
-        .fail(function (XMLHttpRequest, textStatus, errorThrown) {
-            alert(errorThrown);
-        })
-}*/
 
 function updateWords() {
     var words1 = new Array("あああ", "いいい", "ううう", "えええ", "おおお");
