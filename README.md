@@ -36,7 +36,8 @@
     ideas
         ideaID...アイデア番号 primary INT AUTO_INCREMENT
         ideaDetail...アイデア詳細 VARCHAR(255)
-        creatUID...作成ユーザID INT (※サンプル用では10で固定)
+        createUID...作成ユーザID INT (※サンプル用では10で固定) 外部キー
+        createDateTime...作成時間 current_TimeStamp
 
     userdata
         uid...ユーザID primary INT AUTO_INCREMENT

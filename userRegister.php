@@ -16,8 +16,6 @@
 
     $id = $dbh->lastInsertId();
 
-    var_dump($id);
-
     $_SESSION['uid'] = $id;
 ?>
 
@@ -25,6 +23,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
     <title>登録完了</title>
 </head>
 <body>
@@ -33,8 +32,8 @@
             <h1>ユーザ登録完了</h1>
         </div>
         <div id="main">
-            <h3>下記の名前で登録が完了しました。</h3>
-            <h3 id="namePrint"><?= $uname ?></h3>
+            <h2>下記の名前で登録が完了しました。</h3>
+            <h3 id="printName"><?= $uname ?></h3>
         </div>
         <div id="footer">
             (。-`ω-)

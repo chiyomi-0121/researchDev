@@ -35,23 +35,23 @@ body {
 
 /*index.html用*/
 
-#wrap .index {
+.index {
     height: 425px;
     padding-top: 100px;
 }
-#main h3 {
+#indexHeader {
     width: 80%;
     margin: 0 auto;
     text-align: center;
 }
 
-#main form {
+#userRgs {
     height: 200px;
     margin-top: 30px;
     text-align: center;
 }
 
-#main #username {
+#username {
     width: 40%;
     padding: 5px;
     font-size: 20px;
@@ -65,6 +65,18 @@ body {
     width: 70px;
     height: 40px;
     font-size: 20px;
+}
+
+/*userRegister用*/
+
+h2 {
+    text-align: center;
+}
+
+#printName {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 /*startGW用*/
