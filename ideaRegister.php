@@ -7,14 +7,14 @@
   /** @var PDO $dbh データベースハンドラ */
 
   $content = $_POST['content'];
-  //$userId = $_SESSION['uid'];
+  $userId = $_SESSION['uid'];
 
   $statement = $dbh->prepare('INSERT INTO ideas (ideaDetail, createUID)
                               VALUES (:content, :createUID)');
   
   $statement->execute([
     'content' => $content,
-    'createUID' => 10
+    'createUID' => $userId
   ]);
 
 ?>

@@ -34,6 +34,7 @@
         <div id="main">
             <h2>下記の名前で登録が完了しました。</h3>
             <h3 id="printName"><?= $uname ?></h3>
+            <a href="./startGW.php" id="nextLink">開始画面へ</a>
         </div>
         <div id="footer">
             (。-`ω-)

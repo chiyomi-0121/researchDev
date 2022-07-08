@@ -1,3 +1,9 @@
+<?php
+    session_start();
+
+    $myId = $_SESSION['uid'];
+    $_SESSION['uid'] = $myId;
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -21,6 +27,7 @@
             </div>
             <div id="inputArea">
                 <input type="text" name="content" id="content">
+                <input type="hidden" id="userId" value="<?= $myId ?>">
                 <button id="submit">確定</button>
             </div>
             <div id="timeLine">

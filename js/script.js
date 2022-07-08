@@ -8,7 +8,7 @@ var prgTime = 0;
 
 window.onload = function () {
     const url = window.location.href;
-    const param = (url.split('?')[1]).split('=')[1]; //(パラメータ部を取得).stTimeParamの値を取得
+    const param = (url.split('?')[1]).split('=')[1]; //(パラメータ部を抽出).stTimeParamの値を抽出
     startTime = new Date(parseInt(param)); //開始時間のDateオブジェクトを作成
     endTime = new Date(startTime.getTime()); //startTimeのコピー作成
     endTime.setMinutes(endTime.getMinutes() + 10); //終了時間の決定
@@ -46,6 +46,7 @@ function calcProgress() {
 $(function () {
     $("#submit").click(function (event) {
         let content = $("#content").val();
+        let id = $("#userId").val();
         $.ajax({
             type: "POST",
             url: "ideaRegister.php",

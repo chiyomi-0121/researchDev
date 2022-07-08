@@ -79,6 +79,24 @@ h2 {
     text-align: center;
 }
 
+#nextLink {
+    margin: 200px auto 0 auto;
+	display: block;
+	position: relative;
+	width: 160px;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	background: cornflowerblue;
+}
+
+#nextLink:hover {
+	 opacity:0.8;
+	 cursor: pointer;
+	 text-decoration: none;
+}
+
 /*startGW用*/
 
 #waitText {
