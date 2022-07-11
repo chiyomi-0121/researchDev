@@ -17,7 +17,7 @@
     'super/timeRegister.html'...開始時間設定画面(管理者用)
     'super/timeSet.php'...開始時間設定処理
     'text/start.txt'...開始時間記述用ファイル
-    'index.php'...トップ画面    (未実装)
+    'home.php'...トップ画面
     'next.php'...画面遷移確認画面   (未実装)
     'startGW.php'...GW開始画面
     'execGW.php'...GW画面
